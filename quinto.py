@@ -93,7 +93,6 @@ def valid(tilesUsed, horizontal):
                 if tempTotal % 5 != 0:
                     return False, 0
                 otherTotal += tempTotal
-        print('Totals:', directionTotal, otherTotal)
     
     return True, otherTotal + directionTotal
 
@@ -103,7 +102,6 @@ def backtrackVertical(i, j, tileCount, tilesUsed, used, seen):
     global bestMove
     if tileCount > 0:
         allowed, total = valid(tilesUsed, False)
-        print(allowed, total, tilesUsed)
         if allowed:
             if bestMove[0] < total:
                 bestMove = (total, list(tilesUsed))
@@ -111,7 +109,6 @@ def backtrackVertical(i, j, tileCount, tilesUsed, used, seen):
     if tileCount == 5:
         return
     seen[i][j] = True
-    print(i, j)
     if i+1 < len(board):
         if not seen[i+1][j]:
             if board[i+1][j] != -1:
@@ -200,7 +197,6 @@ def main():
     for i in range(len(board)):
         for j in range(len(board[i])):
             if placeableSpace(i, j):
-                print(i, j)
                 for k in range(5):
                     tilesUsed = [(i, j, tiles[k])]
                     used = [False for _ in range(5)]
