@@ -22,7 +22,9 @@ The runtime complexity in this case would be O(5^(MN)). Since we have 5 tiles in
 
 ## Usage
 
-The script can be used by entering your board configuration as the board variable. This makes it easy enter new moves instead of an alternative of entering the board as input to the script. There is another global variable for your hand you can enter in. After filling out the board and your hand, run the script and the best move will be outputed with the tile value and coordinates on the board.
+The script can be used by entering your board configuration as the board variable. This makes it easy enter new moves instead of an alternative of entering the board as input to the script. There is another global variable for your hand you can enter in. After filling out the board and your hand, run the script and the best move will be outputed with the tile value and coordinates on the board. Empty squares are denoted by -1 values.
+
+The output is given as (Move Score, (x, y, tile value), ...) where x and y are 0 indexed and x represent the horizontal axis and y the vertical.
 
 ## Improvements
 
